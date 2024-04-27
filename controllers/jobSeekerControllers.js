@@ -39,7 +39,7 @@ export const createJobSeekerDetails = async (req, res, next) => {
                     data: req.file.buffer, // Update this line to read from the file on disk
                     contentType: req.file.mimetype,
                     filename: req.file.originalname,
-                    src: "http://" + req.hostname + ":8000" + "/static/" + req.file.path
+                    src: "https://jobportal-api-tiu2.onrender.com" + "/static/" + req.file.path
                 };
             }
 
