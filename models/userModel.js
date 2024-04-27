@@ -133,7 +133,7 @@ userSchema.methods.sendJobNotificationEmail = async function (jobSeekerEmail, jo
                     <h3>Title: ${jobDetails.title}</h3>
                     <p>Location: ${jobDetails.jobLocation}</p>
                     <p>Description: ${jobDetails.description}</p>
-                    <a href="https://aristostechjobportal.vercel.app/jobdetails/${jobDetails._id}" style="display: inline-block; background-color: #007bff; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px;">View Job</a>
+                    <a href="http://localhost:3000/jobdetails/${jobDetails._id}" style="display: inline-block; background-color: #007bff; color: #fff; text-decoration: none; padding: 10px 20px; border-radius: 5px;">View Job</a>
                     <p style="margin-top: 20px;">Regards,<br/>UNOM TEAM</p>
                 </div>
             `

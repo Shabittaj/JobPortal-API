@@ -31,7 +31,7 @@ export const createJobController = async (req, res, next) => {
                     data: req.file.buffer,
                     contentType: req.file.mimetype,
                     filename: req.file.originalname,
-                    src: "https://jobportal-api-tiu2.onrender.com" + "/static/" + req.file.path
+                    src: "http://" + req.hostname + ":8000" + "/static/" + req.file.path
                 };
             }
 

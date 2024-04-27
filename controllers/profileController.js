@@ -218,3 +218,27 @@ export const addDetailsController = async (req, res, next) => {
         });
     }
 };
+
+export const updateResume = async (req, res) => {
+    try {
+        const userId = req.user.userId;
+        const resumeData = req.file; // Assuming the resume file is sent as 'resume' in the request
+        let userProfile = await jobSeekerModel.findOne({ userId });
+        if (userProfile == null) {
+            throw new Error("User not found");
+        }
+
+        // Update the resume field with the new resume data
+        userProfile.resume = resumeData;
+        userProfile.resume.src = "https://jobportal-api-tiu2.onrender.com/static/" + resumeData.path;
+
+        // Save the updated profile back to the database
+        await userProfile.save();
+
+        return res.status(200).json({ success: true, message: 'Resume updated successfully' });
+
+    } catch (error) {
+        console.error('Error updating resume:', error);
+        res.status(500).json({ success: false, message: 'Internal server error', error });
+    }
+};
